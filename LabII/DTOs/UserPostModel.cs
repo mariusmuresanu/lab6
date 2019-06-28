@@ -19,15 +19,15 @@ namespace LabII.DTOs
 
         public static User ToUser(UserPostModel user)
         {
-            UserRole role = Models.UserRole.Regular;
+           // UserRole role = Models.UserRole.Regular;
 
             if (user.UserRole == "UserManager")
             {
-                role = Models.UserRole.UserManager;
+              //  role = Models.UserRole.UserManager;
             }
             else if (user.UserRole == "Admin")
             {
-                role = Models.UserRole.Admin;
+               // role = Models.UserRole.Admin;
             }
 
             return new User
@@ -37,7 +37,7 @@ namespace LabII.DTOs
                 Username = user.UserName,
                 Email = user.Email,
                 Password = ComputeSha256Hash(user.Password),
-                UserRole = role
+               // UserRole = role
             };
         }
         private static string ComputeSha256Hash(string password)
